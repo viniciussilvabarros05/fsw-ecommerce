@@ -23,6 +23,7 @@ export default async function Home() {
         <Categories />
       </div>
       <div className="mt-8">
+        <p className="mb-5 pl-5 font-bold uppercase">Ofertas</p>
         <ProductList products={deals} />
       </div>
     </div>
