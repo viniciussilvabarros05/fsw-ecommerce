@@ -5,14 +5,14 @@ import DiscountBadeg from "@/components/ui/discount-badeg";
 import { ProductWithTotalPrice } from "@/helpers/product";
 import { CartContext } from "@/providers/cart";
 import { ArrowLeftIcon, ArrowRightIcon, TruckIcon } from "lucide-react";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 interface ProductInfoProps {
   product: ProductWithTotalPrice;
 }
 
 const ProductInfo = ({ product }: ProductInfoProps) => {
-  const { addProductToCart } = useContext(CartContext);
+  const { addProductToCart,products} = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
 
   function handleDecreaseQuantityClick() {
@@ -23,8 +23,10 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
   }
 
   function handleAddToCartClick() {
+
     addProductToCart({...product, quantity});
   }
+
   return (
     <div className="flex flex-col px-5">
       <h2 className="text-lg">{product.name}</h2>
