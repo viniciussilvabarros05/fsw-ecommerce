@@ -2,14 +2,15 @@ import { ProductWithTotalPrice } from "@/helpers/product";
 import Image from "next/image";
 import Link from "next/link";
 import DiscountBadeg from "./discount-badeg";
-
+import { useRouter } from 'next/navigation'
 interface ProductProps {
   product: ProductWithTotalPrice;
 }
 
 const ProductItem = ({ product }: ProductProps) => {
+  
   return (
-    <Link replace href={`product/${product.slug}`} >
+    <Link replace href={`/product/${product.slug}`} >
       <div className="flex flex-col gap-4">
         <div className=" relative flex h-[170px] w-full items-center justify-center rounded-lg bg-accent">
           <Image
