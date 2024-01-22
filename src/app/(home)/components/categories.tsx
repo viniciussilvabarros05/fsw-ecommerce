@@ -8,6 +8,7 @@ const Categories = async () => {
       {categories?.map((category) => (
         <CategoryItem key={category.id} category={category} />
       ))}
+      
     </div>
   );
 };
