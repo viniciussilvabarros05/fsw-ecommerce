@@ -5,6 +5,8 @@ import {
   LogInIcon,
   PercentIcon,
   ListOrderedIcon,
+  HomeIcon,
+  ScrollTextIcon,
 } from "lucide-react";
 import { Button } from "./button";
 import { Card } from "./card";
@@ -81,6 +83,28 @@ export const Header = () => {
                 Fazer Logout
               </Button>
             )}
+            <SheetClose asChild>
+              <Link href="/">
+                <Button
+                  className="w-full justify-start gap-2"
+                  variant="outline"
+                >
+                  <HomeIcon size={16} />
+                  Início
+                </Button>
+              </Link>
+            </SheetClose>
+            <SheetClose asChild>
+              <Link href="/orders">
+                <Button
+                  className="w-full justify-start gap-2"
+                  variant="outline"
+                >
+                  <ScrollTextIcon size={16} />
+                  Pedidos
+                </Button>
+              </Link>
+            </SheetClose>
             <SheetClose asChild>
               <Link href="/deals">
                 <Button
